@@ -15,7 +15,7 @@ class HttpAssetLoader extends AssetLoader {
     log('easy localization loader: load http $path');
     try {
       return http
-          .get(path)
+          .get(Uri.parse(path))
           .then((response) => json.decode(response.body.toString()));
     } catch (e) {
       //Catch network exceptions
